@@ -17,3 +17,8 @@ Route::put('/contato/update', [ContactController::class, 'update'])->name('conta
 
 Route::delete('/contato/delete/{id}', [ContactController::class, 'destroy'])
 ->name('contato.destroy');
+
+Route::get('/contato/decripty', [ContactController::class, 'decripty']);
+
+
+
