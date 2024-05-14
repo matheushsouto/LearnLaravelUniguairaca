@@ -26,3 +26,23 @@
     <button type="submit">Excluir Contato</button>
 </form>
 
+
+<h1>Formulário de Contato</h1>
+
+    <form method="POST" action="/contato/send">
+        @csrf <!-- Token de CSRF -->
+
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome"><br><br>
+
+        <label for="email">E-mail:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="mensagem">Mensagem:</label><br>
+        <textarea id="mensagem" name="mensagem"></textarea><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+    @if (session('success'))
+    <p style="color: green;">{{ session('success') }}</p>
+    @endif

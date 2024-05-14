@@ -48,4 +48,20 @@ class ContactController extends Controller
         $contact->data_nascimento = Crypt::decryptString($contact->data_nascimento);
         dd($contact);
     }
+
+    public function enviarMensagem(Request $request)
+    {
+        // Validação dos dados do formulário
+        $request->validate([
+            'nome' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'mensagem' => 'required|string',
+        ]);
+
+        dd($request);
+        // Processamento dos dados do formulário (por exemplo, envio de e-mail, salvamento no banco de dados, etc.)
+
+        // Redirecionamento após o envio do formulário
+        return redirect('/contato')->with('success', 'Mensagem enviada com sucesso!');
+    }
 }
