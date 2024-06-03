@@ -22,6 +22,7 @@ class EstudanteController extends Controller
     }
 
     public function edit(Aluno $aluno) {
+        dd($aluno->id);
         return view('alunos.edit', compact('aluno'));
     }
 
